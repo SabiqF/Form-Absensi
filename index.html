@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Absensi Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="icon">
+        <img src="upb.png" alt="Logo Aplikasi">
+      </div>
+      <h1>Absensi Mahasiswa</h1>
+      <p class="subtitle">Form pencatatan kehadiran mahasiswa</p>
+    </header>
+
+    <form id="formAbsensi">
+      <label for="nama">Nama Mahasiswa</label>
+      <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+
+      <label for="nim">NIM</label>
+      <input type="text" id="nim" placeholder="NIM minimal 5 digit" required>
+
+      <label for="kelas">Kelas</label>
+      <select id="kelas" required>
+        <option value="">-- Pilih Kelas --</option>
+        <option value="A">Kelas I243G</option>
+        <option value="B">Kelas I243H</option>
+        <option value="C">Kelas I243I</option>
+      </select>
+
+      <label for="status">Status Kehadiran</label>
+      <select id="status" required>
+        <option value="">-- Pilih Status --</option>
+        <option value="Hadir">Hadir</option>
+        <option value="Izin">Izin</option>
+        <option value="Sakit">Sakit</option>
+        <option value="Alpa">Alpa</option>
+      </select>
+
+      <label for="jamMasuk">Jam Masuk</label>
+      <input type="time" id="jamMasuk" value="08:00" required>
+
+      <div class="buttons">
+        <button type="submit" class="btn-primary">Simpan Absensi</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="hasil" class="hasil" aria-live="polite" hidden>
+      <h2>Hasil Absensi</h2>
+      <div class="result-row"><span>Nama</span><strong id="outNama">-</strong></div>
+      <div class="result-row"><span>NIM</span><strong id="outNim">-</strong></div>
+      <div class="result-row"><span>Kelas</span><strong id="outKelas">-</strong></div>
+      <div class="result-row"><span>Status</span><strong id="outStatus">-</strong></div>
+      <div class="result-row"><span>Jam Masuk</span><strong id="outJam">-</strong></div>
+      <div class="result-row"><span>Keterlambatan</span><strong id="outTerlambat">-</strong></div>
+      <p id="pesan" class="message"></p>
+    </section>
+
+    <footer>Aplikasi sederhana menggunakan HTML, CSS, dan JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
